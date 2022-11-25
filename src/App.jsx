@@ -38,12 +38,12 @@ function App() {
       </Row>
       {category ? (
         <>
-          <Row>
+          <Row className="d-flex justify-content-center mb-4">
             <Col md={4} className="text-center">
               <Category category={category} size="sm" onSelect={setCurrentCategory } />
             </Col>
           </Row>
-          <Row>
+          <Row className="d-flex justify-content-center">
             <Col md={4} className="text-center">
               Questions...
             </Col>
