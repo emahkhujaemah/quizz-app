@@ -3,7 +3,7 @@ import Card from 'react-bootstrap/Card';
 import { useSpring, animated } from 'react-spring';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-export default function Category({category}){
+export default function Category({category, onSelect}){
     const [hovering, setHovering] = useState(false);
     const styles = useSpring({transform: hovering ? 'rotate(3deg' : 'rotate(0deg'});
 
@@ -13,7 +13,7 @@ export default function Category({category}){
         onMouseEnter={() => setHovering(true)} 
         onMouseLeave={() => setHovering(false)}
         >
-        <Card className={`card--bg-${category.color}`}>
+        <Card className={`card--bg-${category.color}`} onClick={() => onSelect(category)} >
             <Card.Body className="text-center">
                 <FontAwesomeIcon icon={category.icon} size="3x" />
                 <h3 className="mt-2 mb-0" > {category.name} </h3>
