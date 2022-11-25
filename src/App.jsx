@@ -13,8 +13,8 @@ function App() {
   const [category, setCategory] = useState(null);
   const [questions, setQuestions] = useState([]);
 
-  const setCurrentCategory = category =>{
-    setCategory(category);
+  const setCurrentCategory = category => {
+    setCategory(category); 
 
     switch (category.name) {
       case CATEGORIES.art.name:
@@ -33,19 +33,32 @@ function App() {
     <Container>
       <Row className="my-5">
         <Col className="text-center">
-          <h1>React Quiz</h1>
+          <h1 onClick={() => setCategory(null)}>React Quiz</h1>
         </Col>
       </Row>
-      {category ? (<>{category.name}</>) :(
+      {category ? (
         <>
-        {Object.values(CATEGORIES).map((c, i) => (
-          <Row key={i} className="d-flex justify-content-center mb-5" >
-            <Col md={4}>
-              <Category category={c} onSelect={setCurrentCategory} />
+          <Row>
+            <Col md={4} className="text-center">
+              <Category category={category} size="sm" onSelect={setCurrentCategory } />
             </Col>
           </Row>
-        ))}
-      </>
+          <Row>
+            <Col md={4} className="text-center">
+              Questions...
+            </Col>
+          </Row>
+        </>
+      ) : (
+        <>
+          {Object.values(CATEGORIES).map((c, i) => (
+            <Row key={i} className="d-flex justify-content-center mb-5" >
+              <Col md={4}>
+                <Category category={c} onSelect={setCurrentCategory} />
+              </Col>
+            </Row>
+          ))}
+        </>
       )}
     </Container>
   );
