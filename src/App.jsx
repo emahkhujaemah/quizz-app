@@ -4,6 +4,7 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import CATEGORIES from "./constants/categories";
 import Category from './components/Category';
+import QuestionBox from './components/QuestionBox';
 import questionsArt from './data/art.json';
 import questionsEntertainment from './data/entertainment.json';
 import questionsHistory from './data/history.json';
@@ -45,8 +46,9 @@ function App() {
           </Row>
           <Row className="d-flex justify-content-center">
             <Col md={4} className="text-center">
-              Questions...
-            </Col>
+              Question...
+              {/* <QuestionBox questions="questions" /> */}
+            </Col> 
           </Row>
         </>
       ) : (

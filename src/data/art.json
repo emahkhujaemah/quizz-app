@@ -1,6 +1,14 @@
-{
-    "difficulty" : "medium",
-    "question" : "what is the bloodiest event in Unated State history in term of casualies?",
-    "correct" : "Battle of Antietam",
-    "incorrect" : ["Pearl Harbor", "September 11th", "D-Day"]
-}
+[
+    {
+        "difficulty" : "medium",
+        "question" : "what is the bloodiest event in Unated State history in term of casualies?",
+        "correct" : "Battle of Antietam",
+        "incorrect" : ["Pearl Harbor", "September 11th", "D-Day"]
+    },
+    {
+        "difficulty" : "medium",
+        "question" : "what is the bloodiest event in Unated State history in term of casualies?",
+        "correct" : "Battle of Antietam",
+        "incorrect" : ["Pearl Harbor", "September 11th", "D-Day"]
+    }
+]

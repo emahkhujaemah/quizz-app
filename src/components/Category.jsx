@@ -10,9 +10,9 @@ export default function Category({category, size, onSelect}){
 
     return(
         <animated.div 
-        style={styles} 
-        onMouseEnter={() => setHovering(true)} 
-        onMouseLeave={() => setHovering(false)}
+            style={styles} 
+            onMouseEnter={() => setHovering(true)} 
+            onMouseLeave={() => setHovering(false)}
         >
         <Card className={`card--bg-${category.color}`} onClick={() => onSelect(category)} >
             <Card.Body className={classNames("text-center", {'d-flex align-items-center justify-content-center p-2' : size === 'sm'})}>
