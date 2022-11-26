@@ -46,7 +46,7 @@ function App() {
           </Row>
           <Row className="d-flex justify-content-center">
             <Col md={4} className="text-center">
-              <QuestionBox questions={questions} />
+              <QuestionBox questions={questions}/>
             </Col> 
 
           </Row>
