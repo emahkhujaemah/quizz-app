@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { ListGroup } from "react-bootstrap";
 
 const reorderAnswers = question => {
     const answers = [question.correct, ...question.incorrect];
@@ -23,10 +24,25 @@ export default function QuestionBox({ questions }){
         setAnswers(reorderAnswers(question));
     }, [currentQuestionIndex]);
 
+    const selectAnswer = answer => {
+        
+    };
+
     return(
         <>
             <div className="mb-4">
                 <strong dangerouslySetInnerHTML={{ __html : currentQuestion.question }}/>
+            </div>
+            <div>
+                <ListGroup>
+                    {answers.map((a, i) => {
+                        return (
+                            <ListGroup.Item key={i}>
+                                <span dangerouslySetInnerHTML={{ __html:  a}}></span>
+                            </ListGroup.Item>
+                        )
+                    })}
+                </ListGroup>
             </div>
         </>
     );
