@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { ListGroup } from "react-bootstrap";
+import classNames from "classnames";
 
 const reorderAnswers = question => {
     const answers = [question.correct, ...question.incorrect];
@@ -17,6 +18,9 @@ export default function QuestionBox({ questions }){
     const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
     const [currentQuestion, setCurrentQuestion] = useState(questions[0]);
     const [answers, setAnswers] = useState([]);
+    const [selectedAnswer, setSelectedAnswer] = useState([null]);
+    const [countCorrectAnswers, setCountCorrectAnswers] = useState([0]);
+    const [isSubmitting, setIsSubmitting] = useState([false]);
 
     useEffect(() => { 
         const question = questions[currentQuestionIndex];
@@ -25,7 +29,12 @@ export default function QuestionBox({ questions }){
     }, [currentQuestionIndex]);
 
     const selectAnswer = answer => {
-        
+        setIsSubmitting(true);
+        setSelectedAnswer(answer);
+
+        if(answer === currentQuestion.correct){
+            setCountCorrectAnswers(countCorrectAnswers + 1);
+        }
     };
 
     return(
@@ -34,10 +43,16 @@ export default function QuestionBox({ questions }){
                 <strong dangerouslySetInnerHTML={{ __html : currentQuestion.question }}/>
             </div>
             <div>
-                <ListGroup>
+                <ListGroup className={classNames({disabled: isSubmitting})}>
                     {answers.map((a, i) => {
+                        const isSelectedAndSubmitting = isSubmitting && a === selectedAnswer;
                         return (
-                            <ListGroup.Item key={i}>
+                            <ListGroup.Item key={i} className={
+                                classNames({
+                                    correct: isSelectedAndSubmitting && a === currentQuestion.correct,
+                                    incorrect: isSelectedAndSubmitting && a !== currentQuestion.correct,
+                                })
+                            } onClick={() => selectAnswer(a)}>
                                 <span dangerouslySetInnerHTML={{ __html:  a}}></span>
                             </ListGroup.Item>
                         )
