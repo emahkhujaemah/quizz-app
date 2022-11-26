@@ -18,9 +18,10 @@ export default function QuestionBox({ questions }){
     const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
     const [currentQuestion, setCurrentQuestion] = useState(questions[0]);
     const [answers, setAnswers] = useState([]);
-    const [selectedAnswer, setSelectedAnswer] = useState([null]);
+    const [selectedAnswer, setSelectedAnswer] = useState(null);
     const [countCorrectAnswers, setCountCorrectAnswers] = useState([0]);
-    const [isSubmitting, setIsSubmitting] = useState([false]);
+    const [isSubmitting, setIsSubmitting] = useState(false);
+    const [isDone, setIsDone] = useState(false);
 
     useEffect(() => { 
         const question = questions[currentQuestionIndex];
@@ -35,7 +36,24 @@ export default function QuestionBox({ questions }){
         if(answer === currentQuestion.correct){
             setCountCorrectAnswers(countCorrectAnswers + 1);
         }
+
+        setTimeout(() => {
+            const newQuestionIndex = currentQuestionIndex + 1;
+
+            if(newQuestionIndex === questions.length){
+                setIsDone(true);
+            }else{
+                setCurrentQuestionIndex(newQuestionIndex);
+                setIsSubmitting(false);
+                setSelectedAnswer(null);
+            }
+            
+        }, 750);
     };
+
+    if (isDone) {
+        return <>Done...</>;
+    }
 
     return(
         <>
@@ -47,7 +65,9 @@ export default function QuestionBox({ questions }){
                     {answers.map((a, i) => {
                         const isSelectedAndSubmitting = isSubmitting && a === selectedAnswer;
                         return (
-                            <ListGroup.Item key={i} className={
+                            <ListGroup.Item 
+                            key={i} 
+                            className={
                                 classNames({
                                     correct: isSelectedAndSubmitting && a === currentQuestion.correct,
                                     incorrect: isSelectedAndSubmitting && a !== currentQuestion.correct,
