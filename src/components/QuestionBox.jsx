@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { ListGroup } from "react-bootstrap";
 import classNames from "classnames";
+import Result from './Result';
 
 const reorderAnswers = question => {
     const answers = [question.correct, ...question.incorrect];
@@ -52,11 +53,14 @@ export default function QuestionBox({ questions }){
     };
 
     if (isDone) {
-        return <>Done...</>;
+        return <Result countCorrectAnswers={countCorrectAnswers}/>;
     }
 
     return(
         <>
+            <div>
+                {currentQuestionIndex + 1}/{questions.length}
+            </div>
             <div className="mb-4">
                 <strong dangerouslySetInnerHTML={{ __html : currentQuestion.question }}/>
             </div>
