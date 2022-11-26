@@ -7,8 +7,26 @@
     },
     {
         "difficulty" : "medium",
-        "question" : "what is the bloodiest event in Unated State history in term of casualies?",
-        "correct" : "Battle of Antietam",
-        "incorrect" : ["Pearl Harbor", "September 11th", "D-Day"]
+        "question" : "what nationality was the surrealist painter Salvador Dali",
+        "correct" : "Spanish",
+        "incorrect" : ["Italian", "French", "Portuguese"]
+    },
+    {
+        "difficulty" : "medium",
+        "question" : "what nwas Genghis Khan&#039;s real name",
+        "correct" : "Tem&uuml;jin",
+        "incorrect" : ["M&ouml;ngke", "&0uml;gedei", "Tem&uml;r"]
+    },
+    {
+        "difficulty" : "hard",
+        "question" : "The painting &quot;The Starry Night&quot; by Vincent van Gogh was part of which art movement",
+        "correct" : "Post-Impressionism",
+        "incorrect" : ["Romanticism", "Neoclassical", "Impressionism"]
+    },
+    {
+        "difficulty" : "hard",
+        "question" : "what French sculptor designed the Statue of Liberty?",
+        "correct" : "Fr&acute;d&eacure;ric Auguste Bartholdi",
+        "incorrect" : ["Jean-L&eacute;on G&eacute;r&ocirc;me", "Auguste Rodin", "Henri Matisse"]
     }
 ]

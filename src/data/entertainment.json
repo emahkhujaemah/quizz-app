@@ -1,8 +1,35 @@
 [
     {
         "difficulty" : "medium",
-        "question" : "what is the bloodiest event in Unated State history in term of casualies?",
+        "question" : "what is the bloodiest events in Unated State history in term of casualies?",
         "correct" : "Battle of Antietam",
         "incorrect" : ["Pearl Harbor", "September 11th", "D-Day"]
+    },
+    {
+        "difficulty" : "medium",
+        "question" : "In &quot;Star Trek&quot;, what is the Klingon death ritual",
+        "correct" : "Look into sky and yell loudly in mourning.",
+        "incorrect" : [
+            "Kiss the jagged forehead before burial", 
+            "Shoot into space in a torpedo casing", 
+            "Split the deceased&#039;s earnings between bloodkin"]
+    },
+    {
+        "difficulty" : "medium",
+        "question" : "which of these artists do Not originate from France?",
+        "correct" : "The Chemical Brothers",
+        "incorrect" : ["Air", "Justice", "Daft Punk"]
+    },
+    {
+        "difficulty" : "hard",
+        "question" : "which of these Nickelldeon game shows aired first?",
+        "correct" : "Double Dare",
+        "incorrect" : ["Nick Arcade", "Finders Keepers", "Nickelodeon Guts"]
+    },
+    {
+        "difficulty" : "hard",
+        "question" : "What is the official name of Prince&#039;s backing band?",
+        "correct" : "The Revolution",
+        "incorrect" : ["The Paupers", "The Wailers", "The Heartbreakers"]
     }
 ]

@@ -1,8 +1,32 @@
 [
     {
         "difficulty" : "medium",
-        "question" : "what is the bloodiest event in Unated State history in term of casualies?",
-        "correct" : "Battle of Antietam",
-        "incorrect" : ["Pearl Harbor", "September 11th", "D-Day"]
+        "question" : "what was Genghis Khan&#039;s real name?",
+        "correct" : "Tem&uuml;jin",
+        "incorrect" : ["M&ouml;ngke", "&Ouml;gedei", "Tem&uuml;r"]
+    },
+    {
+        "difficulty" : "medium",
+        "question" : "Which of these countries was NOT a part of the Soviet Union",
+        "correct" : "Afghanistan",
+        "incorrect" : ["Turkmenistan", "Kazakhstan", "Uzbekistan"]
+    },
+    {
+        "difficulty" : "medium",
+        "question" : "what is the oldest US state?",
+        "correct" : "Delaware",
+        "incorrect" : ["Rhode Island", "maine", "Virginia"]
+    },
+    {
+        "difficulty" : "hard",
+        "question" : "what was the last colony the UK caded marking the end of the British Empire",
+        "correct" : "Hong Kong",
+        "incorrect" : ["India", "Australia", "Ireland"]
+    },
+    {
+        "difficulty" : "hard",
+        "question" : "Who was the first man to travel into outer space twice?",
+        "correct" : "Gus Grissom",
+        "incorrect" : ["Vladimir Komarov", "Charles Conrad", "Yuri Gagarin"]
     }
 ]

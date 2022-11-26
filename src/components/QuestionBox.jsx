@@ -12,13 +12,12 @@ const reorderAnswers = question => {
     return answers;
 };
 
-
 export default function QuestionBox({ questions }){ 
     const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
     const [currentQuestion, setCurrentQuestion] = useState(questions[0]);
     const [answers, setAnswers] = useState([]);
 
-    useEffect(() => {
+    useEffect(() => { 
         const question = questions[currentQuestionIndex];
         setCurrentQuestion(question);
         setAnswers(reorderAnswers(question));
